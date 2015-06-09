@@ -43,8 +43,9 @@ group :development, :test do
 end
 group :test do
   gem 'factory_girl_rails'
-  gem 'faker' 
+  gem 'faker'
   gem 'guard-rspec' 
   gem 'mongoid-rspec'
+  gem 'database_cleaner'
 end
 
