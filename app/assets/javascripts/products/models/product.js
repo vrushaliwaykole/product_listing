@@ -3,5 +3,6 @@ App.Models.Product = Backbone.Model.extend({
 		name: "",
 		description: "",
 		price: ""
-	}
+	},
+	urlRoot: "/api/v1/products"
 });

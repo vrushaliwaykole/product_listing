@@ -22,7 +22,8 @@
 //= require_tree ../templates
 //= require_tree ./products/views/item
 //= require_tree ./products/views/composite
-
+//= require_tree ./products/views/layout
+//= require ./products/events
 //= require_tree ./products/models
 //= require_tree ./products/collections
 //= require_tree ./products/controllers

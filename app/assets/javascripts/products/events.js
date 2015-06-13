@@ -1,3 +1,6 @@
+App.vent.on("Products:index", function(){
+	Backbone.history.navigate("/products", {trigger:true});
+});
 App.vent.on("Products:new", function(){
 	Backbone.history.navigate("/products/new", {trigger:true});
 });

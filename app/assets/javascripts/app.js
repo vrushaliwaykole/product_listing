@@ -10,5 +10,6 @@ _.extend(App, {
 			Composite: {}
 		}
 	},
+	Layouts: {},
 	base_url: ""
 });
