@@ -28,6 +28,12 @@ RSpec.describe ProductsController, type: :controller do
 			expect(response).to be_success
 			expect(response.status).to eq(200)
 		end
+		it "returns response 422 unprocessable entity if product is invalid" do
+			attrs = FactoryGirl.attributes_for(:product)
+			attrs["name"] = ""
+			post :create,{product: attrs,format: "json"}
+			expect(response.status).to eq(422)
+		end
 	end
 	describe "PUT #update" do
 		it "updates product if valid" do
@@ -42,6 +48,28 @@ RSpec.describe ProductsController, type: :controller do
 			put :update,{product: {name: new_name},id: product.id,format: "json"}
 			expect(response).to be_success
 			expect(response.status).to eq(200)
+		end
+		it "returns response 422 unprocessable entity if product is invalid" do
+			product = FactoryGirl.create(:product)
+			post :create,{product: {name: ""},format: "json"}
+			expect(response.status).to eq(422)
+		end
+	end
+	describe "DELETE #destroy" do
+		it "deletes product" do
+			product = FactoryGirl.create(:product)
+			delete :destroy,{id: product.id,format: "json"}
+			expect(Product.count).to eq(0)
+			expect(response).to be_success
+			expect(response.status).to eq(200)
+		end
+	end
+	describe "GET #show" do
+		it "retrieve product from database" do
+			product = FactoryGirl.create(:product)
+			get :show,{id: product.id,format: "json"}
+			expect(assigns(:product)).to eq(product)
+			expect(response).to be_success
 		end
 	end
 end
