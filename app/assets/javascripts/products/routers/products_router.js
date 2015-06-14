@@ -3,5 +3,6 @@ App.Routers.ProductsRouter = Backbone.Marionette.AppRouter.extend({
 		'products/new': 'new',
 		'products/:id/edit': 'edit',
 		'products': 'index',
+		'': 'index',
 	}
 });
