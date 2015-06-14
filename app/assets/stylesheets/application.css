@@ -24,6 +24,8 @@
 .product-list-item{
 	cursor: pointer;
 	padding: 0px !important;
+	margin-right: 0px !important;
+	margin-left: 0px !important;
 }
 .product-list-item:hover{
 	background-color: #DFDFDF;
