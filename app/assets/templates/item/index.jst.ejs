@@ -1,15 +1,16 @@
-<div class="well well-lg">
-	<div class="row">
-		<div class="col-md-6">
-			<%= name %>
+<div class="row product-list-item well well-lg">
+	<div class="show-product col-md-11">
+		<div class="row">
+			<div class="col-md-8">
+				<%= name %>
+			</div>
+			<div class="col-md-4">
+				<%= price %> $
+			</div>
 		</div>
-		<div class="col-md-3">
-			<%= price %>
-		</div>
-		<div class="col-md-3 tr">
-				<a href="javascript:;" class="edit-product"><i class="fa fa-edit"></i></a> | 
-				<a href="javascript:;" class="delete-product"><i class="fa fa-trash"></i></a>
-			</ul>
-		</div>
+	</div>
+	<div class="col-md-1 tr product-actions-div">
+		<a href="javascript:;" class="product-actions edit-product"><i class="fa fa-edit"></i></a> | 
+		<a href="javascript:;" class="product-actions delete-product"><i class="fa fa-trash"></i></a>
 	</div>
 </div>

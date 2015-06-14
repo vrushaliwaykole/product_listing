@@ -18,3 +18,16 @@
 .tr{
 	text-align: right;
 }
+.mt20{
+	margin-top: 20px;
+}
+.product-list-item{
+	cursor: pointer;
+	padding: 0px !important;
+}
+.product-list-item:hover{
+	background-color: #DFDFDF;
+}
+.show-product,.product-actions-div{
+	padding: 24px;
+}
