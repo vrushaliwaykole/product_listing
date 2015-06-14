@@ -22,10 +22,12 @@ App.Views.Products.Item.Index = Backbone.Marionette.ItemView.extend({
 			});
 		}
 	},
+	// Show product details
 	show_product: function(){
 		var show_view = new App.Views.Products.Item.Show({model: this.model});
 		var l = App.controllers.productsController.l;
 		l.$el.find("#product-details-modal .modal-body").html(show_view.render().el);
+		// Add product name to modal title
 		l.$el.find("#product-details-modal .modal-header").html('<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4>' + this.model.get("name") + '</h4>');
 		l.$el.find("#product-details-modal").modal("show");
 	}
