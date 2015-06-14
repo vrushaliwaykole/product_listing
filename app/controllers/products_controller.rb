@@ -7,20 +7,20 @@ class ProductsController < ApplicationController
 	def create
 		@product = Product.new(product_params)
 		respond_to do |format|
-			if(@product.save!)
+			if(@product.save)
 				format.json{render json: @product}
 			else
-				format.json{render json: {errors: @product.errors.full_messages,status: :unprocessable_entity}}
+				format.json{render json: {errors: @product.errors.full_messages},status: :unprocessable_entity}
 			end
 		end
 	end
 	def update
 		@product = Product.find(params[:id])
 		respond_to do |format|
-			if(@product.update!(product_params))
+			if(@product.update_attributes(product_params))
 				format.json{render json: @product}
 			else
-				format.json{render json: {errors: @product.errors.full_messages,status: :unprocessable_entity}}
+				format.json{render json: {errors: @product.errors.full_messages},status: :unprocessable_entity}
 			end
 		end
 	end
